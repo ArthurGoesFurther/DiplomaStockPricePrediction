@@ -2,12 +2,12 @@ import yfinance as yf
 import pandas as pd
 
 # Define parameters
-tickers = ["AAPL", "MSFT", "AMD", "NVDA"]
+tickers = ["SPY", "KO", "MA"]
 start_date = "2024-03-01"
 end_date = "2024-03-30"
 
 # Create an Excel writer
-writer = pd.ExcelWriter("stock_data_historical.xlsx", engine="xlsxwriter")
+writer = pd.ExcelWriter("stock_data_historical_spy.xlsx", engine="xlsxwriter")
 
 # Fetch and save data for each ticker
 for ticker in tickers:

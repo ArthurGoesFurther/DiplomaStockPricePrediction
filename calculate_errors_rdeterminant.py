@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.metrics import mean_squared_error, r2_score
 
 # Load the Excel file
-file_path = "stock_data.xlsx"
+file_path = "stock_data_from2023.xlsx"
 xls = pd.ExcelFile(file_path)
 
 # List of tickers (sheet names)

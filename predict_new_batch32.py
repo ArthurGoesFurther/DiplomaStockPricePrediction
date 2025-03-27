@@ -6,14 +6,14 @@ from keras.models import Sequential
 from keras.layers import Dense, LSTM, Input
 
 # Define parameters
-tickers = ["AAPL", "MSFT", "AMD", "NVDA"]
+tickers = ["SPY", "KO", "MA"]
 train_end_date = "2024-02-29"
 predict_start_date = "2024-03-01"
 predict_end_date = "2024-03-31"
 window_size = 60
 
 # Create an Excel writer
-writer = pd.ExcelWriter("stock_data.xlsx", engine="xlsxwriter")
+writer = pd.ExcelWriter("stock_data_SPY.xlsx", engine="xlsxwriter")
 
 
 def prepare_data(data):
@@ -35,8 +35,8 @@ def build_lstm_model(input_shape):
     model = Sequential(
         [
             Input(shape=(input_shape, 1)),
-            LSTM(units=50, return_sequences=True),
-            LSTM(units=50, return_sequences=False),
+            LSTM(units=128, return_sequences=True),
+            LSTM(units=64, return_sequences=False),
             Dense(units=25),
             Dense(units=1),
         ]
